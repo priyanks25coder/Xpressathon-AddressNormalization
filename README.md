@@ -75,6 +75,9 @@ Using an Open Source Indian Post api
 
 ### Mentions
 
-<img src="https://www.xpressbees.com/Xpressathon/assets/img/Logo-Big.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" height="150" />
+<img src="https://www.xpressbees.com/Xpressathon/assets/img/Logo-Big.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" height="130" />
 
 ***We would Like to thank [Xpreebees](https://www.xpressbees.com/xpressathon) team for organizing such an event which helps students in improving their development skills. We enjoyed making this Project.🎇***
+
+
+https://data.gov.in/resources/all-india-pincode-directory-till-last-month

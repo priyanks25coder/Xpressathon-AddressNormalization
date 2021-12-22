@@ -1,12 +1,13 @@
-## Xpressathon-Address-Normalization  <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/uxbksvjii3bnptbqjbwe" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="100" height="100" />
+<img align="right" src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/uxbksvjii3bnptbqjbwe" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png"  width="100" height="100" />
 
+## Xpressathon-Address-Normalization  
 **Team ID:**  CodeWarriors | **Team Members:** Priyank Shah , Pranjal Goyal | **ReferenceID**: 
 
 ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) ![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 ### Problem Statament
-We needed to develop and API that takes address in RAW format (input), and perform formmating and optimizing the address (removing repetative, null values etc) and return the final address as a response.
+We needed to develop and API that takes address in RAW format (input), and perform formmating and optimizing the address (removing repetative, null values, speling error etc) and return the final address as a response.
 
 ### Solution Approach
 - First of all we looked into serveal string matching algorithm, and decided to use the **Levenshtein distance Algorithm**.
@@ -29,16 +30,7 @@ https://docs.google.com/presentation/d/15NHsy8HAPtnYqiQsnKyEZ28u6_X_wqwv_jWorB3X
 
 ```
 {
-    "house": "B-221",
-    "street": "Backery Street",
-    "landmark": "Near GIDC",
-    "subdistrict": "",
-    "district": "Ahmedabad",
-    "village": "",
-    "area": "Naroda",
-    "pincode": "382330",
-    "state": "Gujarat"
-
+  "address":""  
 }
 ```
 
@@ -70,14 +62,10 @@ $ node index.js
 ### API Used
 Using an Open Source Indian Post api
 
-**Data Govt India Pincode Api:**: https://data.gov.in/resources/all-india-pincode-directory-along-contact-details
-
+**Data Govt India Pincode Api:**: https://data.gov.in/resources/all-india-pincode-directory-till-last-month
 
 ### Mentions
 
 <img src="https://www.xpressbees.com/Xpressathon/assets/img/Logo-Big.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" height="130" />
 
 ***We would Like to thank [Xpreebees](https://www.xpressbees.com/xpressathon) team for organizing such an event which helps students in improving their development skills. We enjoyed making this Project.🎇***
-
-
-https://data.gov.in/resources/all-india-pincode-directory-till-last-month

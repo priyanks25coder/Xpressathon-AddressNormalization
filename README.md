@@ -75,6 +75,6 @@ Using an Open Source Indian Post api
 
 ### Mentions
 
-<img src="https://www.xpressbees.com/Xpressathon/assets/img/Logo-Big%20(1).png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="100" height="100" />
+<img src="https://www.xpressbees.com/Xpressathon/assets/img/Logo-Big.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" height="150" />
 
 ***We would Like to thank [Xpreebees](https://www.xpressbees.com/xpressathon) team for organizing such an event which helps students in improving their development skills. We enjoyed making this Project.🎇***

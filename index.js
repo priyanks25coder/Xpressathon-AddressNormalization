@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: false }));
  
 app.get("/", (req, res) => {
     
-    var inp="#DH103337 Rustomjee Ease Zone Mall , Opposite Rustomjee Ozone Tower , Vasari Hill Road , Malad West , Mumbai-400064Maharashtra";
+    var inp="#M02937 Residency, 1st Right Lane Eshwar Villas Road, Nizampet Near Karur Vysya Bank Hyderabad Telangana India 500072";
 
     const ad= new Address(inp)
     const out=ad.correctAddress()

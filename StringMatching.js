@@ -1,7 +1,7 @@
 // const orgloc = require('./locality.json');
-const orgloc = require('./pincode.json');
+const orgloc = require('./static/pincode.json');
 var FuzzyMatching = require('fuzzy-matching');
-const {words} = require('./converttxtfiletoarr');
+const {words} = require('./static/converttxtfiletoarr');
 
 const favloc=[]
 const favcity=[]
@@ -21,8 +21,8 @@ orgloc.results.forEach(element => {
      
 
     let pos=str.indexOf('(')
-    if(pos==-1) pos=len-4
-    else pos=pos-4
+    if(pos==-1) pos=len-3
+    // else pos=pos-3
 
     str=str.substring(0,pos)
     
@@ -66,4 +66,9 @@ const locfm=new FuzzyMatching(locset);
 const statefm=new FuzzyMatching(state);
 const cityfm= new FuzzyMatching(cityset)
 
-module.exports={locfm,statefm,favloc,cityfm,favcity}
+const cmpreps=["aboard","about","above","absent","across","afore","after","against","along","alongside","amid","amidst","among","amongst","anenst","apropos","apud","around","aside","astride","at","athwart","atop","barring","before","behind","below","beneath","beside","besides","between","beyond","op","by","circa","concerning","despite","down","during","except","excluding","failing","following","for","forenenst","from","given","including","inside","into","mid","midst","minus","modulo","near","next","on","onto","opposite","out","outside","over","past","regarding","round","than","till","times","toward","towards","under","underneath","unto","upon","versus","via","within"]
+
+
+const prepsfm=new FuzzyMatching(cmpreps)
+
+module.exports={locfm,statefm,favloc,cityfm,favcity,prepsfm}

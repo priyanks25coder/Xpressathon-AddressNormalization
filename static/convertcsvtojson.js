@@ -8,6 +8,8 @@ fs.createReadStream('pincode.csv')
     .on('data',(data)=>{
         if(data['District']=='WEST'||data['District']=="SOUTH"||data['District']=="NORTH"||data['District']=="EAST"||data['District']=="NORTH EAST"||data['District']=="SOUTH WEST"||data['District']=="NORTH WEST"|| data['District']=="SOUTH EAST") 
             data['District']=data['District']+' '+data['StateName']
+        else if(data["District"].split(' ')[1]=='RURAL' || data["District"].split(' ')[1]=='URBAN')
+            data['District']=data['District'].split(' ')[0]
         results.push(data)
     })
     .on('end',()=>{

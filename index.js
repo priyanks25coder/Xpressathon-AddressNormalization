@@ -3,8 +3,23 @@ const cors = require("cors");
 var NodeGeocoder = require('node-geocoder');
 const Address = require('./Address')
 const dotenv=require('dotenv');
+var fs=require("fs")
+var readTextFile = require('read-text-file');
+ 
+function readTxtFile(filename){
+    var contents = readTextFile.readSync(filename);
+    const addinps=contents.split('\r\n')
+    return addinps
+}
+
+function writetoFile(content){
+    
+}
 
 var app = express();
+
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 dotenv.config({path:'./config.env'});
 
@@ -20,71 +35,28 @@ app.use(express.urlencoded({ extended: false }));
 //     apiKey: process.env.APIKEY
 // });
 
-  
+//swagger 
+// replace bangalore with bengaluru
  
-app.get("/", (req, res) => {
+app.post("/", (req, res) => {
     
-    var inp="#M02937 Residency, 1st Right Lane Eshwar Villas Road, Nizampet Near Karur Vysya Bank Hyderabad Telangana India 500072";
+    var inparr=req.body.addresses
+    let outarr=[]
 
-    const ad= new Address(inp)
-    const out=ad.correctAddress()
-    console.log(out)
-    // inp= inp.replace(',',' ')
-    // const regex=/,/g
-    // inp= inp.replace(regex,' ')
-    // var inp_arr=inp.split(' ')
+    try{
+        inparr.forEach(element => {
+            const ad= new Address(element)
+            const out=ad.correctAddress()
+            outarr.push(out)
+        });
 
-    // const mset=new Set()
-    // inp_arr.forEach(element => {
-    //     element=element.trim()
-    //     if(element !='')
-    //         mset.add(element)
-    // });
-    // console.log(mset)
-    // // for(var i=0;)
-
+        res.status(200).send({"addresses":outarr}).end()
+    }
     
+    catch(err){
+        res.status(500).send(err.message).end()
+    }
 
-    // const state=(statefm.get(maxele).value).toUpperCase()
-    // console.log(state)
-
-    // values={}
-    // maxval=0
-    // maxele=''
-    // count=0
-    // var flag=0
-    // mset.forEach(element=>{
-    //     var temp=locfm.get(element).distance
-    //     console.log(element,temp)
-    //     if(temp!=null){
-    //         values[element]=temp
-    //         if(temp>maxval){
-    //             var count=favloc.indexOf(locfm.get(element).value)
-    //             console.log(orgloc.results[count]["StateName"])
-    //             if(orgloc.results[count]["StateName"]==state){
-    //                 maxval=temp
-    //                 maxele=element
-    //                 flag=1
-    //             }
-    //         }
-    //     }
-
-    // })
-    
-    // if(flag==1){
-    //     const locality=(locfm.get(maxele).value).trim()
-    //     console.log(locality)
-    //     var count=favloc.indexOf(locality)
-    //     let matchadd=orgloc.results[count]
-    //     const pincode=matchadd['Pincode']
-    //     const city=matchadd['Districtname']
-    // }
-    //near beside accross opp next to 
-    // geocoder.geocode('banglore', function(err, res) {
-    //     console.log(res);
-    // });
-    
-    res.end()
 });
 
 app.listen(PORT, () => {

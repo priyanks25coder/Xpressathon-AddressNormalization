@@ -22,7 +22,7 @@ class Address{
     #preprocessString(){
         // const regex=/,/g
         const indregex=/india/gi
-        const spregex=/[`~!@$%^&*()_|+\-=?;:'",.<>\{\}\[\]]/gi
+        const spregex=/[`~!@$%^&*()_|+\-=?;:'",<>\{\}\[\]]/gi
         // const pinc=gi
         var arr=this.#rawaddressstring.replace(spregex,' ').split(' ')
         
@@ -57,6 +57,7 @@ class Address{
 
         if(maxval>0.8){
             this.#finaladdress.state=state;
+            this.#addressarr.delete(maxele)
         }
     }
 
@@ -130,7 +131,8 @@ class Address{
             var count=favloc.indexOf(locality)
             let matchadd=orgloc.results[count]
             // console.log("Matched Record",matchadd)
-            
+            this.#addressarr.delete(maxele)
+
             const pincode=matchadd['Pincode'].trim()
             const city=matchadd['District'].trim().charAt(0).toUpperCase()+matchadd['District'].trim().toLowerCase().slice(1)
             const state=matchadd['StateName'].trim().toUpperCase().charAt(0)+matchadd['StateName'].trim().toLowerCase().slice(1)
@@ -178,10 +180,11 @@ class Address{
             }
         })
 
-        const city=(cityfm.get(maxele).value).trim()
         
+
         if(maxval>0.8){
-            
+            const city=(cityfm.get(maxele).value).trim()
+            this.#addressarr.delete(maxele)
             var count=favcity.indexOf(city);
             let matchadd=orgloc.results[count];
             this.#finaladdress.state=matchadd["StateName"].trim();
@@ -214,7 +217,7 @@ class Address{
         })
 
         if(maxval>=0.99){
-            console.log(maxval)
+            // console.log(maxval)
             prepos=probstreet.indexOf(maxele)
         }
 

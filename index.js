@@ -3,18 +3,6 @@ const cors = require("cors");
 var NodeGeocoder = require('node-geocoder');
 const Address = require('./Address')
 const dotenv=require('dotenv');
-var fs=require("fs")
-var readTextFile = require('read-text-file');
- 
-function readTxtFile(filename){
-    var contents = readTextFile.readSync(filename);
-    const addinps=contents.split('\r\n')
-    return addinps
-}
-
-function writetoFile(content){
-    
-}
 
 var app = express();
 

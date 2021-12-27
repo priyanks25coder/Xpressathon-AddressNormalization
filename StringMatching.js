@@ -62,6 +62,9 @@ orgloc.results.forEach(element => {
 
 // console.log(orgloc.results[favcity.indexOf('MUMBAI')])
 
+cityset.add('BANGALORE')
+cityset.add('BARODA')
+
 const locfm=new FuzzyMatching(locset);
 const statefm=new FuzzyMatching(state);
 const cityfm= new FuzzyMatching(cityset)

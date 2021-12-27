@@ -44,7 +44,7 @@ class Address{
 
         this.#addressarr.forEach((element)=>{
             var temp=statefm.get(element).distance
-            // console.log(element,temp)
+            
             if(temp!=null){
                 if(temp>maxval){
                     maxval=temp
@@ -53,9 +53,9 @@ class Address{
             }
         })
 
-        const state= (statefm.get(maxele).value).toUpperCase().trim()
-
+        
         if(maxval>0.8){
+            const state= (statefm.get(maxele).value).toUpperCase().trim()
             this.#finaladdress.state=state;
             this.#addressarr.delete(maxele)
         }
@@ -164,7 +164,11 @@ class Address{
             var temp=cityfm.get(element).distance;
 
             if(temp!=null && temp>maxval){
-                const probcity=cityfm.get(element).value;
+                let probcity=cityfm.get(element).value;
+                
+                if(probcity=='BANGALORE') probcity='BENGALURU'
+                else if(probcity=='BARODA') probcity='VADODARA'
+                
                 const count= favcity.indexOf(probcity);
                 
                 if(this.#finaladdress.state!='' && orgloc.results[count]["StateName"]==this.#finaladdress.state){
@@ -182,8 +186,13 @@ class Address{
 
         
 
-        if(maxval>0.8){
-            const city=(cityfm.get(maxele).value).trim()
+        if(maxval>=0.8){
+            let maxprobcity=cityfm.get(maxele).value
+            
+            if(maxprobcity=='BANGALORE') maxprobcity='BENGALURU'
+            else if(maxprobcity=='BARODA') maxprobcity='VADODARA'
+
+            const city=maxprobcity.trim()
             this.#addressarr.delete(maxele)
             var count=favcity.indexOf(city);
             let matchadd=orgloc.results[count];

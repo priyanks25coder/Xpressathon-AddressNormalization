@@ -23,9 +23,6 @@ app.use(express.urlencoded({ extended: false }));
 //     apiKey: process.env.APIKEY
 // });
 
-//swagger 
-// replace bangalore with bengaluru
- 
 app.post("/", (req, res) => {
     
     var inparr=req.body.addresses

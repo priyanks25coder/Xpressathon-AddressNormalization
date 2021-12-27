@@ -1,24 +1,16 @@
 var readTextFile = require('read-text-file');
-const axios = require('axios')
-var fs=require('fs') 
-const dotenv=require('dotenv');
-
-dotenv.config({path:'./config.env'});
-
+var fs=require('fs')
+const Address = require('./Address')
 var contents = readTextFile.readSync('./static/address.txt');
 
 const adds=contents.split('\r\n')
 
 let out=[]
 
-const inpobj = {addresses:[...adds]}
-
-
-axios.post(process.env.API_DOMAIN,inpobj).then(res=>{
-    out=res.data.addresses
-}).catch(err=>{
-    console.log(err)
-
+adds.forEach((ele)=>{
+    const adobj= new Address(ele)
+    const adnorm=adobj.correctAddress()
+    out.push(adnorm)
 })
 
 const jsoutput=JSON.stringify({"addresses":out})

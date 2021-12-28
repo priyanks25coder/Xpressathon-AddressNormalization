@@ -17,8 +17,7 @@ We needed to develop and API that takes address in RAW format (input), and perfo
 - The fields which are not found in the data directory are kept as empty.
 - Note: We took special care about data/api used, All the sources are open-source.
 
-### Example :
-
+### Sample : 
 > Input Address
 
 ```
@@ -30,14 +29,17 @@ We needed to develop and API that takes address in RAW format (input), and perfo
 > Output Address
 
 ```
-{
-  "addressline1": "#T 90834 Thrishika nilaya suvarana Nagar",
-  "addressline2": "near G.M cottage doddabidarakallu Post opp byraveshwara floor mill",
-  "locality": "Narasandra",
-  "city": "Bengaluru",
-  "state": "Karnataka",
-  "pincode": "562127",
-  "geocoder": "13.0600000,77.1700000"
+
+"addresses" : {
+  [
+    "addressline1": "#T 90834 Thrishika nilaya suvarana Nagar",
+    "addressline2": "near G.M cottage doddabidarakallu Post opp byraveshwara floor mill",
+    "locality": "Narasandra",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "pincode": "562127",
+    "geocoder": "13.0600000,77.1700000"
+  ]
 }
 - As we can observe the pincode is corrected based on locality and rest of address is formatted accordingly to the standards.
 ```

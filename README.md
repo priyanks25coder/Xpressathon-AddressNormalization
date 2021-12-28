@@ -52,7 +52,7 @@ After cloning the repo, follow the below steps:
 ```sh
 $ cd (repo path) 
 $ npm install
-$ node index.js
+$ node generateOutput.js
 ```
 
 ### API Used

@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "addresses": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "addressline1": {
+              "type": "string"
+            },
+            "addressline2": {
+              "type": "string"
+            },
+            "locality": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "pincode": {
+              "type": "string"
+            },
+            "geocodes": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "addressline1",
+            "addressline2",
+            "locality",
+            "city",
+            "state",
+            "pincode",
+            "geocodes"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "addressline1": {
+              "type": "string"
+            },
+            "addressline2": {
+              "type": "string"
+            },
+            "locality": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "pincode": {
+              "type": "string"
+            },
+            "geocodes": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "addressline1",
+            "addressline2",
+            "locality",
+            "city",
+            "state",
+            "pincode",
+            "geocodes"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "addressline1": {
+              "type": "string"
+            },
+            "addressline2": {
+              "type": "string"
+            },
+            "locality": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "pincode": {
+              "type": "string"
+            },
+            "geocodes": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "addressline1",
+            "addressline2",
+            "locality",
+            "city",
+            "state",
+            "pincode",
+            "geocodes"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "addresses"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "xpressathon-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "csv-reader": "^1.0.8",
+    "dotenv": "^8.6.0",
+    "express": "^4.17.2",
+    "fs": "*",
+    "fuzzy-matching": "^0.4.3",
+    "line-reader": "^0.4.0",
+    "node-geocoder": "^3.28.0",
+    "nodemon": "^2.0.15",
+    "opencage-api-client": "^1.0.0",
+    "read-text-file": "^1.1.0"
+  },
+  "description": ""
+}

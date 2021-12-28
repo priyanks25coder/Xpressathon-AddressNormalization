@@ -22,7 +22,7 @@ class Address{
     #preprocessString(){
         // const regex=/,/g
         const indregex=/india/gi
-        const spregex=/[`~!@$%^&*()_|+\-=?;:'",<>\{\}\[\]]/gi
+        const spregex=/[`~!@$%^&*()_|+\=?;:'",<>\{\}\[\]]/gi
         // const pinc=gi
         var arr=this.#rawaddressstring.replace(spregex,' ').split(' ')
         
@@ -213,6 +213,12 @@ class Address{
         })
         
         let addl=''
+        probstreet.forEach((ele)=>{
+            if(ele.charCodeAt(0)>=97 && ele.charCodeAt(0)<=122){
+                ele=ele.toLowerCase()
+                ele=ele.charAt(0).toUpperCase() + ele.slice(1);
+            }
+        })
         probstreet.forEach((ele)=>addl=addl+' '+ele)
         
         let maxele=''

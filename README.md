@@ -14,35 +14,36 @@ We needed to develop and API that takes address in RAW format (input), and perfo
 - After this, we solved the mispelling problem in fields by the use of **Fuzzy string matching** on fields that are standarized such as State, District using the data obtained from Govt Data Directory.
 - At last used **Regex** in each fields of address to trim the extra space as well as removal of special charcters and certain common words.
 - We returned the final formatted address as JSON object and wrote the output in file.
+- The fields which are not found in the data directory are kept as empty.
 - Note: We took special care about data/api used, All the sources are open-source.
 
-### Deployed version:
-API Endpoint: https://address-format-project.herokuapp.com/
-
-### Example :
-
+### Sample : 
 > Input Address
 
 ```
 {
-  "address":""  
+  "address": "# , T-90834 Thrishika nilaya , suvarana Nagar near G.M cottage , doddabidarakallu , Nagasandra Post opp- byraveshwara floor mill Bangalore Karnataka India 560073"  
 }
 ```
 
 > Output Address
 
 ```
-{
-  "house": "B-221",
-  "street": "Backery Street",
-  "area": "Naroda",
-  "landmark": "Near GIDC",
-  "village": "NA",
-  "subdistrict": "NA",
-  "district": "Ahmedabad",
-  "state": "Gujarat",
-  "pincode": "382330"
+
+"addresses" : {
+  [
+    {
+      "addressline1": "#T 90834 Thrishika nilaya suvarana Nagar",
+      "addressline2": "near G.M cottage doddabidarakallu Post opp byraveshwara floor mill",
+      "locality": "Narasandra",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "pincode": "562127",
+      "geocoder": "13.0600000,77.1700000"
+    }
+  ]
 }
+- As we can observe the pincode is corrected based on locality and rest of address is formatted accordingly to the standards.
 ```
 
 
@@ -51,7 +52,7 @@ After cloning the repo, follow the below steps:
 ```sh
 $ cd (repo path) 
 $ npm install
-$ node index.js
+$ node generateOutput.js
 ```
 
 ### API Used

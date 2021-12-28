@@ -14,10 +14,8 @@ We needed to develop and API that takes address in RAW format (input), and perfo
 - After this, we solved the mispelling problem in fields by the use of **Fuzzy string matching** on fields that are standarized such as State, District using the data obtained from Govt Data Directory.
 - At last used **Regex** in each fields of address to trim the extra space as well as removal of special charcters and certain common words.
 - We returned the final formatted address as JSON object and wrote the output in file.
+- The fields which are not found in the data directory are kept as empty.
 - Note: We took special care about data/api used, All the sources are open-source.
-
-### Deployed version:
-API Endpoint: https://address-format-project.herokuapp.com/
 
 ### Example :
 

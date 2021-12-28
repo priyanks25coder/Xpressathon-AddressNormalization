@@ -23,7 +23,7 @@ We needed to develop and API that takes address in RAW format (input), and perfo
 
 ```
 {
-  "address":""  
+  "address": "# , T-90834 Thrishika nilaya , suvarana Nagar near G.M cottage , doddabidarakallu , Nagasandra Post opp- byraveshwara floor mill Bangalore Karnataka India 560073"  
 }
 ```
 
@@ -31,16 +31,15 @@ We needed to develop and API that takes address in RAW format (input), and perfo
 
 ```
 {
-  "house": "B-221",
-  "street": "Backery Street",
-  "area": "Naroda",
-  "landmark": "Near GIDC",
-  "village": "NA",
-  "subdistrict": "NA",
-  "district": "Ahmedabad",
-  "state": "Gujarat",
-  "pincode": "382330"
+  "addressline1": "#T 90834 Thrishika nilaya suvarana Nagar",
+  "addressline2": "near G.M cottage doddabidarakallu Post opp byraveshwara floor mill",
+  "locality": "Narasandra",
+  "city": "Bengaluru",
+  "state": "Karnataka",
+  "pincode": "562127",
+  "geocoder": "13.0600000,77.1700000"
 }
+- As we can observe the pincode is corrected based on locality and rest of address is formatted accordingly to the standards.
 ```
 
 

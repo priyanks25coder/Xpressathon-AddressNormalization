@@ -39,7 +39,7 @@ We needed to develop and API that takes address in RAW format (input), and perfo
       "city": "Bengaluru",
       "state": "Karnataka",
       "pincode": "562127",
-      "geocoder": "13.0600000,77.1700000"
+      "geocodes": "13.0600000,77.1700000"
     }
   ]
 }

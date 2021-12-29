@@ -12,7 +12,7 @@ class Address{
         "city":"",
         "state":"",
         "pincode":"",
-        "geocoder":"",
+        "geocodes":"",
     };
 
     constructor(addressstring){
@@ -149,7 +149,7 @@ class Address{
 
             else this.#finaladdress.city=this.#finaladdress.city.toUpperCase().charAt(0)+this.#finaladdress.city.toLowerCase().slice(1)
 
-            this.#finaladdress.geocoder=matchadd["Latitude"]+','+matchadd["Longitude"]
+            this.#finaladdress.geocodes=matchadd["Latitude"]+','+matchadd["Longitude"]
 
         }
 

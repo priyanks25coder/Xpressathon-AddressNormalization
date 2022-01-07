@@ -48,6 +48,12 @@ We needed to develop and API that takes address in RAW format (input), and perfo
 
 
 ### How to Run?
+
+Clone the Repository
+   ```sh
+   git clone https://github.com/priyanks25coder/Xpressathon-AddressNormalization.git
+   ```
+
 After cloning the repo, follow the below steps:
 ```sh
 $ cd (repo path) 

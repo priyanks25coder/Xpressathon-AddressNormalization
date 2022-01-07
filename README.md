@@ -61,6 +61,8 @@ $ npm install
 $ node generateOutput.js
 ```
 
+Note: Provide the path of address.txt file in the generateOutput.js file
+
 ### API Used
 Using an Open Source Indian Post api/data directory
 
